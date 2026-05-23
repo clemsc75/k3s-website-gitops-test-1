@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mon-site-web
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mon-site-web
+  template:
+    metadata:
+      labels:
+        app: mon-site-web
+    spec:
+      containers:
+        - name: site-web
+          image: nginx:alpine
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "200m"
