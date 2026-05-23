@@ -13,6 +13,8 @@ spec:
       labels:
         app: mon-site-web
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: rpi-zero-2-w-k3s-test
       containers:
         - name: site-web
           image: nginx:alpine
