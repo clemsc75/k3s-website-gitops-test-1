@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: site-web
-          image: nginx:alpine
+          image: clemsc75/mon-site-rpi:v1
           ports:
             - containerPort: 80
           resources:
